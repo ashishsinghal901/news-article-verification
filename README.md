@@ -1,25 +1,20 @@
-# Selenium Cucumber Framework
+# Guardian News Article verification
 
 ---
 
 ## Project Purpose
 
-This project aims to give an inspiring or sample of automation test framework that uses Selenium and Cucumber with Java
-as the programming language.
-
-You can see pieces of framework components that build on every git branch. For example, you want to see how `Hooks` is
-implemented in the framework. Just select the `Hooks` branch then you will see the magic.
-
-![select branch](https://github.com/yazidisme/image-attachment/blob/master/seleniumcucumberframework1.png)
-
-If you want to go back to the current branch, you can select `main` as the default branch.
-
----
+Purpose of this framework is to validate first new article on the 'https://www.theguardian.com/tone/news' is valid. The product
+owner wants to start with a simple confirmation by checking other sources to confirm a
+news article is valid. For the first news article on https://www.theguardian.com/tone/news
+your task is to search google/other resources for similar information to confirm that the
+article is valid. If two or more articles exist on Google or another resource then we consider
+the first Guardian news article to be valid.
 
 ## Tools and Libraries
 
-This project using 2 main tools, Selenium and Cucumber. On the other hand, I using some of the tools that support this
-great framework. The complete list of tools, you can see in the `pom.xml` file.
+This project using 2 main tools, Selenium, Java and Cucumber. On the other hand, I used some supportive tools. 
+The complete list of tools, you can see in the `pom.xml` file.
 
 ## Requirements
 
@@ -37,31 +32,12 @@ great framework. The complete list of tools, you can see in the `pom.xml` file.
 $ mvn clean install
 ```
 
-* If you want to run the specific test, use the cucumber tags like this
-
-```shell
-$ mvn clean install -Dcucumber.filter.tags="@REPLACE_WITH_ANY_TAGS_THAT_YOU_WANT"
-```
-
 ## Test Results
 
 * Test report automatically generated on `target` folder after finished the test execution
-* See test report from `target/cucumber-reports/advanced-reports/cucumber-html-reports/overview-features.html`
-* You can also share your Cucumber Report with another person at https://reports.cucumber.io, just go
-  to `src/test/resources/cucumber.properties` then change the value to be `true`
+* Report Path target/cucumber-report/cucumber.htmls
 
-```properties
-cucumber.publish.enabled=true
-```
+![img.png](img.png)
 
-* For more information about reports cucumber you can go to https://reports.cucumber.io/docs/cucumber-jvm
-
----
-
-### References
-
-* https://cucumber.io/docs/installation/java/
-* https://www.selenium.dev/documentation/en/
-* https://www.toolsqa.com/cucumber-automation-framework/
-* https://www.w3schools.com/java/
-* https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html
+# Automation Execution
+* Use the runner file for executing the test cases. src/test/java/runners/TestRunner
