@@ -1,7 +1,7 @@
 # Guardian News Article verification
 
 ---
-## Supported browser OS version:
+## Supported browser version:
 * Chrome: 103.0.5060
 * Firefox: 103.0
 
