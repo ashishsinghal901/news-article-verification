@@ -1,4 +1,4 @@
-# Guardian News Article verification
+# Guardian News Article verification:
 
 ---
 ## Supported browser version:
@@ -13,7 +13,7 @@ owner wants to start with a simple confirmation by checking other sources to con
 news article is valid. For the first news article on https://www.theguardian.com/tone/news
 your task is to search google/other resources for similar information to confirm that the
 article is valid. If two or more articles exist on Google or another resource then we consider
-the first Guardian news article to be valid.
+the first Guardian news article to be valid. All the locators based on Indian Website, locators might changes if you access Guardian application from other country.
 
 ## Tools and Libraries
 
