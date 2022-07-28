@@ -4,12 +4,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 import pageobjects.GoogleSearchPage;
 import pageobjects.HomePage;
 import utilities.TestContext;
-
-import static utilities.Constant.HOME_PAGE_TITLE;
 
 
 public class GuardianNewsSteps {
@@ -27,7 +24,7 @@ public class GuardianNewsSteps {
 
     @Given("I am on the Guardian website homepage")
     public void IAmOnTheGuardianWebsiteHomepage() {
-        Assert.assertEquals(homePage.validateSiteTitle(), HOME_PAGE_TITLE);
+        homePage.validateIAmOnGuardianPage();
     }
 
     @And("I accept the manage cooking popup")
@@ -52,7 +49,7 @@ public class GuardianNewsSteps {
     }
 
     @Then("I went to {int} sources and validate news on Guardian is valid")
-    public void iWentToSourcesAndValidateNewsOnGuardianIsValid(int noOfSources) throws InterruptedException {
+    public void iWentToSourcesAndValidateNewsOnGuardianIsValid(int noOfSources) {
         googleSearchPage.validateNewsOnOtherSource(newsArticle, noOfSources);
     }
 }
