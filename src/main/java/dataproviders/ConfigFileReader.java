@@ -9,6 +9,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * This class is for reading data from the config file.
+ */
 public class ConfigFileReader {
 
     private final Properties properties;

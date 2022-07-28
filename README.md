@@ -1,6 +1,10 @@
 # Guardian News Article verification
 
 ---
+## Supported browser OS version:
+* Chrome: 103.0.5060
+* Firefox: 103.0
+
 
 ## Project Purpose
 
