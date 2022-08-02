@@ -25,11 +25,11 @@ public class HomePage {
 
     By firstNewsArticle = By.xpath("//span[@class='js-headline-text']");
 
-    public boolean acceptPrivacyMessage() {
+    public void acceptPrivacyMessage() {
         Wait.untilPageReadyState(webDriver, Duration.ofSeconds(45));
         homePageActions.acceptPrivacyMessage(frameElement, acceptPrivacy);
-        return true;
     }
+
     public void validateIAmOnGuardianPage() {
         Assert.assertEquals(homePageActions.validateSiteTitle(), HOME_PAGE_TITLE);
     }

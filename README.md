@@ -2,24 +2,25 @@
 
 ## Locator Might change if we open application from other countries like US, UK. We took indian Guardian, Google website for all the locators.
 ---
+
 ## Supported browser version:
+
 * Chrome: 103.0.5060
 * Firefox: 103.0
 
-
 ## Project Purpose
 
-Purpose of this framework is to validate first new article on the 'https://www.theguardian.com/tone/news' is valid. The product
-owner wants to start with a simple confirmation by checking other sources to confirm a
-news article is valid. For the first news article on https://www.theguardian.com/tone/news
-your task is to search google/other resources for similar information to confirm that the
-article is valid. If two or more articles exist on Google or another resource then we consider
-the first Guardian news article to be valid. All the locators based on Indian Website, locators might changes if you access Guardian application from other country.
+Purpose of this framework is to validate first new article on the 'https://www.theguardian.com/tone/news' is valid. The
+product owner wants to start with a simple confirmation by checking other sources to confirm a news article is valid.
+For the first news article on https://www.theguardian.com/tone/news
+your task is to search google/other resources for similar information to confirm that the article is valid. If two or
+more articles exist on Google or another resource then we consider the first Guardian news article to be valid. All the
+locators based on Indian Website, locators might changes if you access Guardian application from other country.
 
 ## Tools and Libraries
 
-This project using 2 main tools, Selenium, Java and Cucumber. On the other hand, I used some supportive tools. 
-The complete list of tools, you can see in the `pom.xml` file.
+This project using 2 main tools, Selenium, Java and Cucumber. On the other hand, I used some supportive tools. The
+complete list of tools, you can see in the `pom.xml` file.
 
 ## Requirements
 
@@ -45,4 +46,5 @@ $ mvn clean install
 ![img.png](img.png)
 
 # Automation Execution
+
 * Use the runner file for executing the test cases. src/test/java/runners/TestRunner

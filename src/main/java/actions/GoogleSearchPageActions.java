@@ -22,9 +22,9 @@ public class GoogleSearchPageActions {
     /**
      * Author: Ashish Singhal
      * This method will search article on google.
+     *
      * @param inputSearch: Google search bar locator
      * @param newsArticle: Article to search on google
-     *
      */
     public void searchArticleOnGoogle(By inputSearch, String newsArticle) {
         webDriver.findElement(inputSearch).click();
@@ -36,31 +36,31 @@ public class GoogleSearchPageActions {
     /**
      * This method is used to search article on the google search result screen,
      * It validates guardian's new article in the meta data of the search site.
-     * @param newsArticle: Guardian Article
-     * @param noOfSources: No. of sources on which we have to validate the result
-     * @param linkNewsWebsite
-     * @param linkMetaData
-     * @param linkNewsUrl
-     * @return
+     *
+     * @param newsArticle:     Guardian Article
+     * @param noOfSources:     No. of sources on which we have to validate the result
+     * @param linkNewsWebsite:
+     * @param linkMetaData:
+     * @param linkNewsUrl:     return:
      */
     public boolean validateNewsOnOtherSource(String newsArticle, int noOfSources, By linkNewsWebsite, By linkMetaData, By linkNewsUrl) {
         String[] newsDetails = newsArticle.split(" ");
         List<WebElement> newsSourceSite = webDriver.findElements(linkNewsWebsite);
         int wordMatch = 0;
         int noOfArticle = 0;
-        boolean result=false;
+        boolean result = false;
         for (int i = 0; i < newsSourceSite.size(); i++) {
             if (!newsSourceSite.get(i).getText().contains(GUARDIAN_URL)) {
-                for (int j = 0; j < newsDetails.length; j++) {
+                for (String newsDetail : newsDetails) {
                     String metadata = webDriver.findElements(linkMetaData).get(i).getText().toLowerCase();
-                    if (metadata.contains(newsDetails[j].toLowerCase())) {
+                    if (metadata.contains(newsDetail.toLowerCase())) {
                         wordMatch++;
                     }
                 }
                 if ((newsDetails.length / wordMatch) * 100 > 90) {
                     if (noOfArticle == noOfSources) {
                         System.out.println("Found similar news on 2 Websites, it seems new is valid");
-                        result=true;
+                        result = true;
                         break;
                     }
                     noOfArticle++;
@@ -69,7 +69,7 @@ public class GoogleSearchPageActions {
             }
             wordMatch = 0;
         }
-       return result;
+        return result;
     }
 }
 
