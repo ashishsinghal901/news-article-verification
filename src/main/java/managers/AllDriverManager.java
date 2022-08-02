@@ -9,7 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
+
 
 public class AllDriverManager {
 
@@ -47,9 +48,8 @@ public class AllDriverManager {
         }
         long time = FileReaderManager.getInstance().getConfigFileReader().getTime();
 
-        webDriver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().setScriptTimeout(time, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
+        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(time));
         return webDriver;
     }
 
