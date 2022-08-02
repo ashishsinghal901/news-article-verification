@@ -48,6 +48,7 @@ public class GoogleSearchPageActions {
         List<WebElement> newsSourceSite = webDriver.findElements(linkNewsWebsite);
         int wordMatch = 0;
         int noOfArticle = 0;
+        boolean result=false;
         for (int i = 0; i < newsSourceSite.size(); i++) {
             if (!newsSourceSite.get(i).getText().contains(GUARDIAN_URL)) {
                 for (int j = 0; j < newsDetails.length; j++) {
@@ -57,15 +58,18 @@ public class GoogleSearchPageActions {
                     }
                 }
                 if ((newsDetails.length / wordMatch) * 100 > 90) {
-                    if (noOfArticle == noOfSources)
+                    if (noOfArticle == noOfSources) {
+                        System.out.println("Found similar news on 2 Websites, it seems new is valid");
+                        result=true;
                         break;
+                    }
                     noOfArticle++;
-                    System.out.println("News is genuine, Found similar news on following Website: " + webDriver.findElements(linkNewsUrl).get(i).getText());
+                    System.out.println("Found similar news on following Website: " + webDriver.findElements(linkNewsUrl).get(i).getText());
                 }
             }
             wordMatch = 0;
         }
-        return true;
+       return result;
     }
 }
 
