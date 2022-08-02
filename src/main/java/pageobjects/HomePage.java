@@ -26,7 +26,7 @@ public class HomePage {
     By firstNewsArticle = By.xpath("//span[@class='js-headline-text']");
 
     public boolean acceptPrivacyMessage() {
-        Wait.untilPageReadyState(webDriver, Duration.ofSeconds(30));
+        Wait.untilPageReadyState(webDriver, Duration.ofSeconds(45));
         homePageActions.acceptPrivacyMessage(frameElement, acceptPrivacy);
         return true;
     }

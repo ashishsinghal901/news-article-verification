@@ -19,6 +19,13 @@ public class GoogleSearchPageActions {
         this.webDriver = webDriver;
     }
 
+    /**
+     * Author: Ashish Singhal
+     * This method will search article on google.
+     * @param inputSearch: Google search bar locator
+     * @param newsArticle: Article to search on google
+     *
+     */
     public void searchArticleOnGoogle(By inputSearch, String newsArticle) {
         webDriver.findElement(inputSearch).click();
         webDriver.findElement(inputSearch).sendKeys(newsArticle);
