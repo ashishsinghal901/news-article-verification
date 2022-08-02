@@ -33,6 +33,16 @@ public class GoogleSearchPageActions {
         Wait.untilPageReadyState(webDriver, Duration.ofSeconds(45));
     }
 
+    /**
+     * This method is used to search article on the google search result screen,
+     * It validates guardian's new article in the meta data of the search site.
+     * @param newsArticle: Guardian Article
+     * @param noOfSources: No. of sources on which we have to validate the result
+     * @param linkNewsWebsite
+     * @param linkMetaData
+     * @param linkNewsUrl
+     * @return
+     */
     public boolean validateNewsOnOtherSource(String newsArticle, int noOfSources, By linkNewsWebsite, By linkMetaData, By linkNewsUrl) {
         String[] newsDetails = newsArticle.split(" ");
         List<WebElement> newsSourceSite = webDriver.findElements(linkNewsWebsite);
