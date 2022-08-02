@@ -35,7 +35,7 @@ public class GoogleSearchPage {
     }
 
     public void validateNewsOnOtherSource(String newsArticle, int noOfSources) {
-        boolean staus = googleSearchPageActions.validateNewsOnOtherSource(newsArticle, noOfSources, linkNewsWebsite, linkMetaData, linkNewsUrl);
-        Assert.assertTrue(staus, "News is not authentic");
+        boolean status = googleSearchPageActions.validateNewsOnOtherSource(newsArticle, noOfSources, linkNewsWebsite, linkMetaData, linkNewsUrl);
+        Assert.assertTrue(status, "News is not authentic");
     }
 }
