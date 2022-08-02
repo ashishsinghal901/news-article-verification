@@ -1,5 +1,6 @@
 # Guardian News Article verification:
 
+## Locator Might change if we open application from other countries like US, UK. We took indian Guardian, Google website for all the locators.
 ---
 ## Supported browser version:
 * Chrome: 103.0.5060
